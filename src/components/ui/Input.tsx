@@ -1,7 +1,7 @@
 /**
  * Champ de saisie stylé avec label, erreur, et bouton de visibilité optionnel.
  */
-import React, { forwardRef, useState } from "react";
+import React, { forwardRef, useId, useState } from "react";
 import { FiEye, FiEyeOff } from "react-icons/fi";
 
 export interface InputProps
@@ -18,12 +18,10 @@ export const Input = forwardRef<HTMLInputElement, InputProps>(function Input(
   ref,
 ) {
   const [showPassword, setShowPassword] = useState(false);
-  const inputId = id ?? rest.name;
-  const actualType = togglePassword
-    ? showPassword
-      ? "text"
-      : "password"
-    : type;
+  // Génère un id unique si aucun id ni name n'est fourni
+  const generatedId = useId();
+  const inputId = id ?? rest.name ?? generatedId;
+  const actualType = togglePassword ? (showPassword ? "text" : "password") : type;
 
   return (
     <div className="auth-field">
@@ -40,7 +38,9 @@ export const Input = forwardRef<HTMLInputElement, InputProps>(function Input(
           type={actualType}
           className={`auth-input ${error ? "auth-input--error" : ""} ${className}`.trim()}
           aria-invalid={!!error}
-          aria-describedby={error ? `${inputId}-error` : hint ? `${inputId}-hint` : undefined}
+          aria-describedby={
+            error ? `${inputId}-error` : hint ? `${inputId}-hint` : undefined
+          }
         />
         {togglePassword && (
           <button
