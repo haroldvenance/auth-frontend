@@ -1,0 +1,299 @@
+/* ============================================================
+   Styles par défaut du module d'authentification.
+   Toutes les classes sont préfixées `auth-` pour éviter les
+   collisions avec les styles de l'application hôte.
+   ============================================================ */
+
+:root {
+  --auth-primary: #2563eb;
+  --auth-primary-hover: #1d4ed8;
+  --auth-primary-disabled: #93c5fd;
+  --auth-danger: #dc2626;
+  --auth-danger-hover: #b91c1c;
+  --auth-success: #16a34a;
+  --auth-text: #1f2937;
+  --auth-text-muted: #6b7280;
+  --auth-border: #d1d5db;
+  --auth-border-focus: #2563eb;
+  --auth-bg: #ffffff;
+  --auth-bg-subtle: #f9fafb;
+  --auth-radius: 8px;
+  --auth-font: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
+    "Helvetica Neue", Arial, sans-serif;
+}
+
+/* ============================================================
+   Conteneur
+   ============================================================ */
+.auth-container {
+  font-family: var(--auth-font);
+  color: var(--auth-text);
+  max-width: 420px;
+  margin: 0 auto;
+  padding: 24px;
+}
+
+.auth-title {
+  font-size: 24px;
+  font-weight: 600;
+  margin: 0 0 8px 0;
+}
+
+.auth-subtitle {
+  font-size: 14px;
+  color: var(--auth-text-muted);
+  margin: 0 0 24px 0;
+}
+
+/* ============================================================
+   Champs
+   ============================================================ */
+.auth-field {
+  margin-bottom: 16px;
+}
+
+.auth-label {
+  display: block;
+  font-size: 14px;
+  font-weight: 500;
+  margin-bottom: 6px;
+  color: var(--auth-text);
+}
+
+.auth-input {
+  width: 100%;
+  padding: 10px 12px;
+  font-size: 14px;
+  font-family: inherit;
+  color: var(--auth-text);
+  background: var(--auth-bg);
+  border: 1px solid var(--auth-border);
+  border-radius: var(--auth-radius);
+  transition: border-color 0.15s, box-shadow 0.15s;
+  box-sizing: border-box;
+}
+
+.auth-input:focus {
+  outline: none;
+  border-color: var(--auth-border-focus);
+  box-shadow: 0 0 0 3px rgba(37, 99, 235, 0.1);
+}
+
+.auth-input--error {
+  border-color: var(--auth-danger);
+}
+
+.auth-input--error:focus {
+  border-color: var(--auth-danger);
+  box-shadow: 0 0 0 3px rgba(220, 38, 38, 0.1);
+}
+
+.auth-input-wrapper {
+  position: relative;
+}
+
+.auth-input-icon-right {
+  position: absolute;
+  right: 12px;
+  top: 50%;
+  transform: translateY(-50%);
+  background: none;
+  border: none;
+  cursor: pointer;
+  color: var(--auth-text-muted);
+  padding: 4px;
+  display: flex;
+  align-items: center;
+}
+
+.auth-input-icon-right:hover {
+  color: var(--auth-text);
+}
+
+.auth-error-text {
+  font-size: 12px;
+  color: var(--auth-danger);
+  margin-top: 4px;
+}
+
+.auth-hint-text {
+  font-size: 12px;
+  color: var(--auth-text-muted);
+  margin-top: 4px;
+}
+
+/* ============================================================
+   Boutons
+   ============================================================ */
+.auth-button {
+  width: 100%;
+  padding: 10px 16px;
+  font-size: 14px;
+  font-weight: 500;
+  font-family: inherit;
+  color: white;
+  background: var(--auth-primary);
+  border: none;
+  border-radius: var(--auth-radius);
+  cursor: pointer;
+  transition: background-color 0.15s;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+}
+
+.auth-button:hover:not(:disabled) {
+  background: var(--auth-primary-hover);
+}
+
+.auth-button:disabled {
+  background: var(--auth-primary-disabled);
+  cursor: not-allowed;
+}
+
+.auth-button--secondary {
+  background: transparent;
+  color: var(--auth-primary);
+  border: 1px solid var(--auth-primary);
+}
+
+.auth-button--secondary:hover:not(:disabled) {
+  background: var(--auth-bg-subtle);
+}
+
+.auth-button--danger {
+  background: var(--auth-danger);
+}
+
+.auth-button--danger:hover:not(:disabled) {
+  background: var(--auth-danger-hover);
+}
+
+.auth-button--ghost {
+  background: transparent;
+  color: var(--auth-text-muted);
+  border: none;
+  padding: 6px 12px;
+  font-size: 13px;
+  width: auto;
+}
+
+.auth-button--ghost:hover:not(:disabled) {
+  color: var(--auth-text);
+}
+
+/* ============================================================
+   Liens et bas de formulaire
+   ============================================================ */
+.auth-footer {
+  margin-top: 24px;
+  text-align: center;
+  font-size: 14px;
+  color: var(--auth-text-muted);
+}
+
+.auth-link {
+  color: var(--auth-primary);
+  text-decoration: none;
+  font-weight: 500;
+  cursor: pointer;
+}
+
+.auth-link:hover {
+  text-decoration: underline;
+}
+
+.auth-row {
+  display: flex;
+  gap: 8px;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.auth-row--center {
+  justify-content: center;
+}
+
+/* ============================================================
+   Message d'erreur global
+   ============================================================ */
+.auth-alert {
+  padding: 10px 14px;
+  font-size: 14px;
+  border-radius: var(--auth-radius);
+  margin-bottom: 16px;
+  border: 1px solid;
+}
+
+.auth-alert--error {
+  color: var(--auth-danger);
+  background: #fef2f2;
+  border-color: #fecaca;
+}
+
+.auth-alert--success {
+  color: var(--auth-success);
+  background: #f0fdf4;
+  border-color: #bbf7d0;
+}
+
+.auth-alert--info {
+  color: var(--auth-primary);
+  background: #eff6ff;
+  border-color: #bfdbfe;
+}
+
+/* ============================================================
+   OTP
+   ============================================================ */
+.auth-otp-input {
+  width: 100%;
+  padding: 14px 12px;
+  font-size: 24px;
+  font-family: "SF Mono", Monaco, "Cascadia Code", monospace;
+  text-align: center;
+  letter-spacing: 12px;
+  text-indent: 12px;
+  color: var(--auth-text);
+  background: var(--auth-bg);
+  border: 1px solid var(--auth-border);
+  border-radius: var(--auth-radius);
+  transition: border-color 0.15s, box-shadow 0.15s;
+  box-sizing: border-box;
+}
+
+.auth-otp-input:focus {
+  outline: none;
+  border-color: var(--auth-border-focus);
+  box-shadow: 0 0 0 3px rgba(37, 99, 235, 0.1);
+}
+
+.auth-otp-resend {
+  text-align: center;
+  font-size: 13px;
+  color: var(--auth-text-muted);
+  margin-top: 16px;
+}
+
+/* ============================================================
+   Divers
+   ============================================================ */
+.auth-divider {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin: 20px 0;
+  color: var(--auth-text-muted);
+  font-size: 12px;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.auth-divider::before,
+.auth-divider::after {
+  content: "";
+  flex: 1;
+  height: 1px;
+  background: var(--auth-border);
+}

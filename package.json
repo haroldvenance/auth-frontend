@@ -18,7 +18,7 @@
     "dist"
   ],
   "scripts": {
-    "build": "tsup src/index.ts --format esm,cjs --dts --out-dir dist",
+	"build": "tsup src/index.ts --format esm,cjs --dts --out-dir dist && cp src/styles/default.css dist/styles.css",
     "dev": "tsup src/index.ts --format esm,cjs --dts --watch",
     "test": "vitest",
     "test:run": "vitest run",
