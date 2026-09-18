@@ -37,6 +37,15 @@ export type { PasskeyListProps } from "./components/auth/PasskeyList";
 export { PasskeyManager } from "./components/auth/PasskeyManager";
 export type { PasskeyManagerProps } from "./components/auth/PasskeyManager";
 
+export { VerificationForm } from "./components/auth/VerificationForm";
+export type { VerificationFormProps } from "./components/auth/VerificationForm";
+export { VerificationStatusCard } from "./components/auth/VerificationStatusCard";
+export type { VerificationStatusCardProps } from "./components/auth/VerificationStatusCard";
+export { VerificationBanner } from "./components/auth/VerificationBanner";
+export type { VerificationBannerProps } from "./components/auth/VerificationBanner";
+export { VerificationGate } from "./components/auth/VerificationGate";
+export type { VerificationGateProps } from "./components/auth/VerificationGate";
+
 
 
 // === Composants UI ===
@@ -79,6 +88,15 @@ export {
   authenticateWithPasskey,
   formatPasskeyDate,
 } from "./lib/passkeys";
+
+export {
+  DOCUMENT_TYPES,
+  getDocumentLabel,
+  formatVerificationStatus,
+  formatFileSize,
+  REJECTION_REASON_LABELS,
+} from "./lib/verification";
+export type { DocumentTypeOption } from "./lib/verification";
 
 
 // === Types ===
