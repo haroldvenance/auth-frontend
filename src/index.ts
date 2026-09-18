@@ -19,6 +19,19 @@ export type { RegisterFormProps } from "./components/auth/RegisterForm";
 export { OTPForm } from "./components/auth/OTPForm";
 export type { OTPFormProps } from "./components/auth/OTPForm";
 
+
+export { TOTPForm } from "./components/auth/TOTPForm";
+export type { TOTPFormProps } from "./components/auth/TOTPForm";
+export { RecoveryCodes } from "./components/auth/RecoveryCodes";
+export type { RecoveryCodesProps } from "./components/auth/RecoveryCodes";
+export { TOTPDisableForm } from "./components/auth/TOTPDisableForm";
+export type { TOTPDisableFormProps } from "./components/auth/TOTPDisableForm";
+export { TOTPStatusCard } from "./components/auth/TOTPStatusCard";
+export type { TOTPStatusCardProps } from "./components/auth/TOTPStatusCard";
+
+
+
+
 // === Composants UI ===
 export { Button } from "./components/ui/Button";
 export type { ButtonProps, ButtonVariant } from "./components/ui/Button";
@@ -45,6 +58,13 @@ export type {
   OTPRequestData,
   OTPVerifyData,
 } from "./lib/validation";
+
+export {
+  formatRecoveryCode,
+  copyToClipboard,
+  downloadRecoveryCodes,
+} from "./lib/totp";
+
 
 // === Types ===
 export type {

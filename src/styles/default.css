@@ -297,3 +297,134 @@
   height: 1px;
   background: var(--auth-border);
 }
+
+
+
+/* ============================================================
+   TOTP — QR code
+   ============================================================ */
+.auth-qr-container {
+  display: flex;
+  justify-content: center;
+  padding: 20px;
+  background: var(--auth-bg-subtle);
+  border-radius: var(--auth-radius);
+  margin-bottom: 20px;
+}
+
+.auth-qr-image {
+  width: 200px;
+  height: 200px;
+  display: block;
+}
+
+.auth-secret-box {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 10px 12px;
+  background: var(--auth-bg-subtle);
+  border: 1px solid var(--auth-border);
+  border-radius: var(--auth-radius);
+}
+
+.auth-secret-code {
+  flex: 1;
+  font-family: "SF Mono", Monaco, "Cascadia Code", monospace;
+  font-size: 13px;
+  word-break: break-all;
+  color: var(--auth-text);
+}
+
+/* ============================================================
+   Recovery codes
+   ============================================================ */
+.auth-recovery-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 8px;
+  margin: 16px 0;
+}
+
+.auth-recovery-code {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 8px 12px;
+  background: var(--auth-bg-subtle);
+  border: 1px solid var(--auth-border);
+  border-radius: var(--auth-radius);
+  font-family: "SF Mono", Monaco, "Cascadia Code", monospace;
+  font-size: 13px;
+}
+
+.auth-recovery-index {
+  color: var(--auth-text-muted);
+  font-size: 12px;
+  min-width: 20px;
+}
+
+.auth-checkbox-row {
+  display: flex;
+  align-items: flex-start;
+  gap: 10px;
+  font-size: 14px;
+  cursor: pointer;
+  line-height: 1.4;
+}
+
+.auth-checkbox-row input {
+  margin-top: 3px;
+  flex-shrink: 0;
+}
+
+/* ============================================================
+   Status card
+   ============================================================ */
+.auth-status-card {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  padding: 16px;
+  background: var(--auth-bg);
+  border: 1px solid var(--auth-border);
+  border-radius: var(--auth-radius);
+}
+
+.auth-status-icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 48px;
+  height: 48px;
+  background: var(--auth-bg-subtle);
+  border-radius: 50%;
+  flex-shrink: 0;
+}
+
+.auth-status-content {
+  flex: 1;
+  min-width: 0;
+}
+
+.auth-status-title {
+  font-size: 15px;
+  font-weight: 600;
+  color: var(--auth-text);
+}
+
+.auth-status-subtitle {
+  font-size: 13px;
+  color: var(--auth-text-muted);
+  margin-top: 2px;
+}
+
+.auth-status-action {
+  flex-shrink: 0;
+}
+
+.auth-status-action .auth-button {
+  width: auto;
+  padding: 8px 16px;
+  font-size: 13px;
+}
