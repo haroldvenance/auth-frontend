@@ -30,6 +30,13 @@ export { TOTPStatusCard } from "./components/auth/TOTPStatusCard";
 export type { TOTPStatusCardProps } from "./components/auth/TOTPStatusCard";
 
 
+export { PasskeyButton } from "./components/auth/PasskeyButton";
+export type { PasskeyButtonProps } from "./components/auth/PasskeyButton";
+export { PasskeyList } from "./components/auth/PasskeyList";
+export type { PasskeyListProps } from "./components/auth/PasskeyList";
+export { PasskeyManager } from "./components/auth/PasskeyManager";
+export type { PasskeyManagerProps } from "./components/auth/PasskeyManager";
+
 
 
 // === Composants UI ===
@@ -65,6 +72,14 @@ export {
   downloadRecoveryCodes,
 } from "./lib/totp";
 
+export {
+  isWebAuthnSupported,
+  isPlatformAuthenticatorAvailable,
+  registerPasskey,
+  authenticateWithPasskey,
+  formatPasskeyDate,
+} from "./lib/passkeys";
+
 
 // === Types ===
 export type {
@@ -86,3 +101,6 @@ export type {
   VerificationRequestResponse,
   VerificationStatus,
 } from "./types";
+
+
+
