@@ -4,3 +4,9 @@ dist/
 *.log
 .DS_Store
 coverage/
+
+
+# Fichiers temporaires générés par erreur
+tsc
+nohup.out
+*.tmp
